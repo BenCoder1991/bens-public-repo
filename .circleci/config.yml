@@ -1,20 +1,17 @@
 version: 2.1
 
 jobs:
-  mytestjob:
+  my_job:
     docker:
       - image: circleci/node:13.8.0
     steps:
       - run: return 1
       - run:
-        name: what an error
-        command: echo "complete failure"
-        when: on_fail
-
+          name: on error
+          command: echo "Hello Error!"
+          when: on_fail
 
 workflows:
-  my workflow:
+  my_workflow:
     jobs:
-      - mytestjob
-
-‚
+      - my_job
