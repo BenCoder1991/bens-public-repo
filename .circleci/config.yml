@@ -11,7 +11,8 @@ jobs:
       - print_pipeline_id
       - run: return 1
       - run:
-        echo "complete failure"
+        name: what an error
+        command: echo "complete failure"
         when: on_fail
 
 
