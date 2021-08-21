@@ -9,10 +9,6 @@ jobs:
       - image: circleci/node:13.8.0
     steps:
       - print_pipeline_id
-      - run: return 1
-      - run:
-        echo "complete failure"
-        when: on_fail
 
 
 workflows:
@@ -20,4 +16,3 @@ workflows:
     jobs:
       - mytestjob
 
-‚
