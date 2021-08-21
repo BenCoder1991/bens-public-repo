@@ -1,22 +1,15 @@
 version: 2.1
 jobs:
-  save_hello_world_output:
+  print_hello:
     docker:
       - image: circleci/node:13.8.0
     steps:
-      - run: echo "hello world" > output.txt
-      - persist_to_workspace:
-          root: /tmp/workspace/
-          paths: 
-            - output.txt
-
-  print_output_file:
+      - run: echo hello
+  print_world:
     docker:
       - image: circleci/node:13.8.0
     steps:
-      - attach_workspace:
-          at: /tmp/workspace
-      - run: cat output.txt
+      - run: echo world
     build:
       docker:
         - image: cimg/base:2020.01
